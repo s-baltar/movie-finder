@@ -1,10 +1,13 @@
 import './App.css'
+import Movies from './Movies'
+import Home from './Home'
 
 function App() {
 
   return (
     <>
-      <h1>Movie Finder</h1>
+      {/* <Movies/> */}
+      <Home/>
     </>
   )
 }
