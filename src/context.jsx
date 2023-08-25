@@ -6,9 +6,7 @@ const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {
   const [query, setQuery] = useState('');
-  const { data: movies } = useFetch(`&search_value=${query}`)
-
-  console.log(movies)
+  const { data: movies } = useFetch(`&search_value=${query}&search_type=2`)
 
   return (
     <AppContext.Provider value={{query, setQuery, movies}}>

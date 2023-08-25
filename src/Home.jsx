@@ -1,3 +1,4 @@
+import Movies from "./Movies";
 import SearchForm from "./SearchForm";
 
 const Home = () => {
@@ -5,6 +6,7 @@ const Home = () => {
     <div>
       <h1>Movie Finder</h1>
       <SearchForm/>
+      <Movies/>
     </div>
 
   );

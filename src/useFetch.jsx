@@ -12,6 +12,11 @@ const useFetch = (urlParams) => {
     try {
       const response = await fetch(url)
       const data = await response.json()
+
+      if (data.statusCode !== 400) {
+        setData(data.results)
+      }
+
       console.log(data)
     } catch (error) {
       console.log(error)
@@ -22,7 +27,6 @@ const useFetch = (urlParams) => {
     if (debouncedQuery)
     {
       fetchMovies(`${API_ENDPOINT}${urlParams}`)
-      console.log(`${urlParams}`)
     }
   }, [debouncedQuery]);
 
