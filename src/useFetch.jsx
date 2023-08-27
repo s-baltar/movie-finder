@@ -1,12 +1,9 @@
-import { useState, useEffect } from "react";
-import useDebounce from './useDebounce';
+import { useState, useEffect, useCallback } from "react";
 
 const API_ENDPOINT = `https://api.watchmode.com/v1/autocomplete-search/?apiKey=${import.meta.env.VITE_WATCHMODE_API_KEY}`;
 
 const useFetch = (urlParams) => {
   const [data, setData] = useState(null)
-
-  const debouncedQuery = useDebounce(urlParams, 500)
 
   const fetchMovies = async (url) => {
     try {
@@ -24,11 +21,8 @@ const useFetch = (urlParams) => {
   }
 
   useEffect(() => {
-    if (debouncedQuery)
-    {
-      fetchMovies(`${API_ENDPOINT}${urlParams}`)
-    }
-  }, [debouncedQuery]);
+    fetchMovies(`${API_ENDPOINT}${urlParams}`)
+  }, [urlParams])
 
   return { data }
 }
