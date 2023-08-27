@@ -1,7 +1,14 @@
 import { useGlobalContext } from "./context";
+import { Link } from "react-router-dom";
 
 const Movies = () => {
-  const { movies } = useGlobalContext()
+  const { isLoading, movies } = useGlobalContext()
+
+  if (movies === null || isLoading)
+  {
+    console.log(movies)
+    return <div></div>
+  }
 
   return (
     <section>
@@ -9,15 +16,16 @@ const Movies = () => {
         const { id, name: title, image_url: img, year } = movie
 
         return (
-          <article>
-            <img src={img} alt={title} />
-            <div>
-              <h4>{title}</h4>
-              <p>{year} </p>
-            </div>
-          </article>
+          <Link key={id} to={`/movies/${id}`}>
+            <article>
+              <img src={img} alt={title} />
+              <div>
+                <h4>{title}</h4>
+                <p>{year} </p>
+              </div>
+            </article>
+          </Link>
         )
-
       })}
     </section>
   );
