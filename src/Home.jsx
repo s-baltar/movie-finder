@@ -3,8 +3,7 @@ import Movies from "./Movies";
 
 const Home = () => {
   return (
-    <div>
-      <h1>Movie Finder</h1>
+    <div className="home">
       <SearchForm/>
       <Movies/>
     </div>

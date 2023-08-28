@@ -11,15 +11,15 @@ const Movies = () => {
   }
 
   return (
-    <section>
+    <section className="movies">
       {movies.map((movie) => {
         const { id, name: title, image_url: img, year } = movie
 
         return (
-          <Link key={id} to={`/movies/${id}`}>
+          <Link className="movie" key={id} to={`/movies/${id}`}>
             <article>
               <img src={img} alt={title} />
-              <div>
+              <div className="movie-info">
                 <h4>{title}</h4>
                 <p>{year} </p>
               </div>

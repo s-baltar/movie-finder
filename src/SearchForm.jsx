@@ -16,9 +16,10 @@ const SearchForm = () => {
   }, [searchTerm, debouncedQuery])
 
   return (
-    <form onSubmit={(e) => e.preventDefault()}>
+    <form className='search-form' onSubmit={(e) => e.preventDefault()}>
       <h2>search movies</h2>
       <input
+        className='form-input'
         type='text'
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
