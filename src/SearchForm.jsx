@@ -9,7 +9,7 @@ const SearchForm = () => {
   const debouncedQuery = useCallback(debounce((term) => {
     if (term)
       setQuery(term)
-  }, 3000), [])
+  }, 200), [])
 
   useEffect(() => {
     debouncedQuery(searchTerm)

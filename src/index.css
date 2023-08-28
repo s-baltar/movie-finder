@@ -3,7 +3,6 @@
 Variables
 ===============
 */
-
 :root {
   /* dark shades of primary color*/
   --clr-primary-1: hsl(205, 86%, 17%);
@@ -50,7 +49,6 @@ Variables
 Global Styles
 ===============
 */
-
 *,
 ::after,
 ::before {
@@ -147,7 +145,6 @@ Search
   margin-bottom: 3rem;
   text-align: left;
 }
-
 .form-input {
   width: 100%;
   border: transparent;
@@ -166,7 +163,6 @@ Search
 Movies
 ===============
 */
-
 .movies {
   width: 90vw;
   max-width: var(--max-width);
@@ -219,7 +215,6 @@ Movies
 Movie Page
 ===============
 */
-
 .movie-page {
   width: 90vw;.movie-page {
   width: 90vw;
@@ -231,6 +226,9 @@ Movie Page
 .movie-page-info {
   text-align: left;
 }
+.movie-page-details {
+  display: flex;
+}
 .movie-page img {
   width: 100%;
   display: block;
@@ -287,4 +285,15 @@ Movie Page
   .movie-page {
     grid-template-columns: 1fr 2fr;
   }
+}
+@media screen and (max-width: 992px) {
+  .movie-page img{
+    width: 25%;
+  }
+}
+.source-list {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  text-transform: capitalize;
 }

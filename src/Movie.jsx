@@ -11,23 +11,39 @@ const Movie = () => {
     return <div></div>
   }
 
-  const { title, plot_overview: plot, runtime_minutes: runtime, year, poster: img, sources } = movie
+  const { title, plot_overview: plot, year, poster: img, runtime_minutes: runtime, sources, us_rating} = movie
 
-  console.log(sources)
+  const reducedSources = sources.reduce((accumulator, current) => {
+    const existingItem = accumulator.find(item => item.source_id === current.source_id)
+
+    if (!existingItem)
+      accumulator.push(current)
+
+    return accumulator
+  }, [])
 
   return (
 
-    <section>
+    <section className="movie-page">
       <img src={img} alt={title}/>
-      <div>
+      <div className="movie-page-info">
         <h2>{title}</h2>
+        <div className="movie-page-details">
+          <h5>{year}</h5>
+          <h5>{runtime}m</h5>
+          <h5>{us_rating}</h5>
+        </div>
         <p>{plot}</p>
-        <h4>{year} {runtime} min</h4>
         <h3>available on</h3>
-        {sources.map((source) => {
-          const { name, region } = source
+        {reducedSources.map((source) => {
+          const { source_id: id, name, web_url: url, format, type, price} = source
 
-          return <h5>{name}</h5>
+          return (
+            <article className="source-list" key={id}>
+              <a href={url}>{name}</a>
+              {type === 'rent' ? <h6>Rent for ${price}</h6> : <h6>{type}</h6>}
+            </article>
+          )
         })}
       </div>
     </section>
