@@ -6,7 +6,6 @@ const Movies = () => {
 
   if (movies === null || isLoading)
   {
-    console.log(movies)
     return <div></div>
   }
 
