@@ -17,7 +17,7 @@ const SearchForm = () => {
 
   return (
     <form className='search-form' onSubmit={(e) => e.preventDefault()}>
-      <h2>search movies</h2>
+      <h2>where to watch</h2>
       <input
         className='form-input'
         type='text'
