@@ -147,7 +147,8 @@ Search
 }
 .form-input {
   width: 100%;
-  border: transparent;
+  border-style: groove;
+  border-color: var(--clr-grey-10);
   max-width: 600px;
   background: var(--clr-white);
   padding: 1rem;
@@ -228,6 +229,8 @@ Movie Page
 }
 .movie-page-details {
   display: flex;
+  justify-content: space-between;
+  width: 110px;
 }
 .movie-page img {
   width: 100%;
