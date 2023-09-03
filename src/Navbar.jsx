@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { FaMoon } from 'react-icons/fa';
 import { ImSun } from 'react-icons/im';
 import { useGlobalContext } from './context';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const {theme, setTheme} = useGlobalContext()
@@ -23,7 +24,9 @@ const Navbar = () => {
     <nav>
       <div className="nav-center">
         <div className="nav-header">
-          <h2>where to watch</h2>
+          <Link to={'/'}>
+            <h2>where to watch</h2>
+          </Link>
         </div>
         <div className="btn-container">
           <button onClick={toggleTheme}>
