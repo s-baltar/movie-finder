@@ -39,9 +39,10 @@ Variables
   --spacing: 0.1rem;
   --radius: 0.25rem;
   --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
   --max-width: 1170px;
   --fixed-width: 620px;
+  --letterSpacing: 1px;
 }
 
 /*
@@ -131,6 +132,25 @@ p {
     width: 95vw;
   }
 }
+/*
+===============
+Navbar
+===============
+*/
+.nav-header {
+  justify-content: space-between;
+  margin: 0.5rem 0.5rem;
+  letter-spacing: var(--letterSpacing);
+}
+.nav-center {
+  background: var(--clr-black);
+  box-shadow: var(--dark-shadow);
+  padding: 0.1rem;
+}
+.nav-center h2 {
+  color: var(--clr-white);
+  font-size: 2rem;
+}
 
 /*
 ===============
@@ -141,8 +161,7 @@ Search
   width: 90vw;
   max-width: var(--max-width);
   margin: 0 auto;
-  margin-top: 5rem;
-  margin-bottom: 3rem;
+  margin-top: 2rem;
   text-align: left;
 }
 .form-input {
