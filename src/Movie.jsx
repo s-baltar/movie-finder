@@ -2,6 +2,8 @@ import { useParams } from "react-router-dom"
 
 import useFetch from "./useFetch";
 
+const url = 'https://upload.wikimedia.org/wikipedia/commons/f/fc/No_picture_available.png'
+
 const Movie = () => {
 
   const { id } = useParams()
@@ -25,16 +27,16 @@ const Movie = () => {
   return (
 
     <section className="movie-page">
-      <img src={img} alt={title}/>
+      <img src={img === null ? url : img} alt={title}/>
       <div className="movie-page-info">
         <h2>{title}</h2>
         <div className="movie-page-details">
           <h5>{year}</h5>
-          <h5>{runtime}m</h5>
+          {runtime && <h5>{runtime}m</h5>}
           <h5>{us_rating}</h5>
         </div>
         <p>{plot}</p>
-        <h3>available on</h3>
+        {reducedSources.length >0 ? <h3>available on</h3> : <h3>no available services found</h3>}
         {reducedSources.map((source) => {
           const { source_id: id, name, web_url: url, format, type, price} = source
 
