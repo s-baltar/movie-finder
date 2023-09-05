@@ -9,8 +9,6 @@ const useFetch = (endpoint, urlParams) => {
   const [data, setData] = useState(null)
 
   const fetchMovies = async (url) => {
-    console.log(url)
-
     setIsLoading(true)
     try {
       const response = await fetch(url)
